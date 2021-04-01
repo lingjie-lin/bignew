@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入layui.css文件 -->
+    <link rel="stylesheet" href="/assets/lib/layui/css/layui.css">
+    <!-- 引入本页面css文件 -->
+    <link rel="stylesheet" href="/assets/css/article/art_cate.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">
+            <span>文章类别管理</span>
+            <button type="button" class="layui-btn layui-btn-normal layui-btn-sm">添加类别</button>
+        </div>
+
+        <div class="layui-card-body">
+            <table class="layui-table">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col width="200">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>昵称</th>
+                        <th>加入时间</th>
+                        <th>签名</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>贤心</td>
+                        <td>2016-11-29</td>
+                        <td>
+                            <button class="layui-btn layui-btn-xs">编辑</button>
+                            <button class="layui-btn layui-btn-xs  layui-btn-danger">编辑</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 1.引入模板引擎文件 -->
+    <script src="/assets/lib/template-web.js"></script>
+    <script type="text/html" id="tpl-art-cate">
+        <!--  准备数据 -->
+        { {each data } }
+    <tr>
+        <td>{{$value.name}}</td>
+        <td>{{$value.alias}}</td>
+        <td>
+            <button class="layui-btn layui-btn-xs">编辑</button>
+            <button class="layui-btn layui-btn-xs  layui-btn-danger">编辑</button>
+        </td>
+    </tr>
+    { { /each } }
+    </script>
+    <!-- 引入layui.js文件 -->
+    <script src="/assets/lib/layui/layui.all.js"></script>
+    <!-- 引入jquery.js文件 -->
+    <script src="/assets/lib/jquery.js"></script>
+    <!-- 引入baseAPI.js文件 -->
+    <script src="/assets/js/baseAPI.js"></script>
+    <!-- 引入本页面的js文件 -->
+    <script src="/assets/js/article/art_cate.js"></script>
+
+</body>
+
+</html>
